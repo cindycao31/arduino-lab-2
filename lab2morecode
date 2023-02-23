@@ -1,0 +1,69 @@
+const int ledPin4= 4;
+const int ledPin15= 15;
+// const 16 ledPin16= LED_BUILTIN;
+// const 18 ledPin18= LED_BUILTIN;
+
+int ledState4= LOW;
+int ledState15= LOW;
+// int ledState3= LOW;
+// int ledState4= LOW;
+
+unsigned long previousMillis4=0;
+unsigned long previousMillis15=0;
+// unsigned long previousMillis16=0;
+// unsigned long previousMillis18=0;
+
+const long interval4 = 1000;
+const long interval15= 1000;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(ledPin4, OUTPUT);
+  pinMode(ledPin15, OUTPUT);
+  // pinMode(ledPin16, OUTPUT);
+  // pinMode(ledPin18, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  unsigned long currentMillis=millis();
+
+  if (currentMillis- previousMillis4 >=interval4){
+    previousMillis4=currentMillis;
+    // if the LED is off turn it on and vice-versa:
+    if (ledState4==LOW){
+      ledState4=HIGH;
+    } else{
+      ledState4=LOW;
+    }
+    // set the LED with the ledState of the variable:
+    digitalWrite(ledPin4, ledState4);
+  }
+  // unsigned long currentMillis15=millis15();
+  // if (currentMillis15- previousMillis15 >=interval15){
+  //   previousMillis15=currentMillis15;
+  //   // if the LED is off turn it on and vice-versa:
+  //   if (ledState15==LOW){
+  //     ledState15=HIGH;
+  //   } else{
+  //     ledState15=LOW;
+  //   }
+  //   // set the LED with the ledState of the variable:
+  //   digitalWrite(ledPin15, ledState15);
+  // }
+}
+void loop() {
+  // put your main code here, to run repeatedly:
+  unsigned long currentMillis15=millis15();
+  if (currentMillis15- previousMillis15 >=interval15){
+    previousMillis15=currentMillis15;
+    // if the LED is off turn it on and vice-versa:
+    if (ledState15==LOW){
+      ledState15=HIGH;
+    } else{
+      ledState15=LOW;
+    }
+    // set the LED with the ledState of the variable:
+    digitalWrite(ledPin15, ledState15);
+  }
+}
